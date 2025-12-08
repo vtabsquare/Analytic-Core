@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Demo - InsightAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .demo-section {
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #334155;
+        }
+        .code-block {
+            background: #1e293b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+        .breakpoint-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.75rem;
+            font-weight: bold;
+            z-index: 9999;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+    <!-- Breakpoint Indicator -->
+    <div class="breakpoint-indicator">
+        <span class="show-mobile">📱 Mobile</span>
+        <span class="show-tablet">📲 Tablet</span>
+        <span class="hide-tablet-down">💻 Laptop+</span>
+    </div>
+
+    <!-- Header -->
+    <header class="responsive-navbar bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="bg-gradient-to-br from-indigo-500 to-violet-600 p-2.5 rounded-xl">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+            </div>
+            <h1 class="responsive-text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                Responsive Demo
+            </h1>
+        </div>
+        <div class="flex gap-2">
+            <button class="responsive-button bg-indigo-600 hover:bg-indigo-500 rounded-xl">
+                Test Button
+            </button>
+        </div>
+    </header>
+
+    <div class="responsive-container py-12">
+        <!-- Hero Section -->
+        <section class="demo-section">
+            <h1 class="hero-title text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400 mb-6 text-center">
+                Responsive Typography Demo
+            </h1>
+            <p class="responsive-text-base text-slate-400 text-center max-w-3xl mx-auto mb-8">
+                This page demonstrates all responsive utilities. Resize your browser window or use DevTools to see how elements adapt across different screen sizes.
+            </p>
+            <div class="code-block">
+                &lt;h1 class="hero-title"&gt;...&lt;/h1&gt;
+                <br>Scales: 2rem (mobile) → 4.5rem (desktop)
+            </div>
+        </section>
+
+        <!-- Typography Scale -->
+        <section class="demo-section">
+            <h2 class="responsive-heading text-indigo-400 mb-6">Typography Scale</h2>
+            <div class="space-y-4">
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <h3 class="responsive-heading text-white">Responsive Heading</h3>
+                    <p class="text-slate-500 text-sm mt-2">24px → 32px → 40px</p>
+                </div>
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <h4 class="responsive-subheading text-white">Responsive Subheading</h4>
+                    <p class="text-slate-500 text-sm mt-2">18px → 22px → 28px</p>
+                </div>
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <p class="responsive-text-base text-white">Responsive Base Text</p>
+                    <p class="text-slate-500 text-sm mt-2">14px → 16px → 17px</p>
+                </div>
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <p class="responsive-text-sm text-white">Responsive Small Text</p>
+                    <p class="text-slate-500 text-sm mt-2">14px → 15px → 16px</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grids Demo -->
+        <section class="demo-section">
+            <h2 class="responsive-heading text-indigo-400 mb-6">Responsive Grid</h2>
+            <p class="responsive-text-base text-slate-400 mb-4">1 col (mobile) → 2 cols (tablet) → 3 cols (laptop) → 4 cols (desktop)</p>
+            <div class="responsive-grid">
+                <div class="responsive-card bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/30 rounded-xl text-center">
+                    <div class="text-4xl mb-2">📱</div>
+                    <p class="font-bold">Item 1</p>
+                </div>
+                <div class="responsive-card bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 border border-violet-500/30 rounded-xl text-center">
+                    <div class="text-4xl mb-2">📲</div>
+                    <p class="font-bold">Item 2</p>
+                </div>
+                <div class="responsive-card bg-gradient-to-br from-fuchsia-500/20 to-pink-500/20 border border-fuchsia-500/30 rounded-xl text-center">
+                    <div class="text-4xl mb-2">💻</div>
+                    <p class="font-bold">Item 3</p>
+                </div>
+                <div class="responsive-card bg-gradient-to-br from-pink-500/20 to-red-500/20 border border-pink-500/30 rounded-xl text-center">
+                    <div class="text-4xl mb-2">🖥️</div>
+                    <p class="font-bold">Item 4</p>
+                </div>
+            </div>
+            <div class="code-block">
+                &lt;div class="responsive-grid"&gt;...&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Dashboard Grid -->
+        <section class="demo-section">
+            <h2 class="responsive-heading text-indigo-400 mb-6">Dashboard Grid</h2>
+            <p class="responsive-text-base text-slate-400 mb-4">1 col (mobile) → 2 cols (tablet/laptop) → 3 cols (desktop)</p>
+            <div class="responsive-dashboard-grid">
+                <div class="dashboard-card responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <h3 class="responsive-text-lg font-bold text-white mb-4">Chart 1</h3>
+                    <div class="responsive-chart-container bg-slate-800/50 rounded-lg flex items-center justify-center">
+                        <p class="text-slate-500">Chart Placeholder</p>
+                    </div>
+                </div>
+                <div class="dashboard-card responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <h3 class="responsive-text-lg font-bold text-white mb-4">Chart 2</h3>
+                    <div class="responsive-chart-container bg-slate-800/50 rounded-lg flex items-center justify-center">
+                        <p class="text-slate-500">Chart Placeholder</p>
+                    </div>
+                </div>
+                <div class="dashboard-card responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <h3 class="responsive-text-lg font-bold text-white mb-4">Chart 3</h3>
+                    <div class="responsive-chart-container bg-slate-800/50 rounded-lg flex items-center justify-center">
+                        <p class="text-slate-500">Chart Placeholder</p>
+                    </div>
+                </div>
+            </div>
+            <div class="code-block">
+                &lt;div class="responsive-dashboard-grid"&gt;
+                <br>&nbsp;&nbsp;&lt;div class="dashboard-card responsive-card"&gt;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="responsive-chart-container"&gt;...&lt;/div&gt;
+                <br>&nbsp;&nbsp;&lt;/div&gt;
+                <br>&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Feature Grid -->
+        <section class="demo-section">
+            <h2 class="responsive-heading text-indigo-400 mb-6">Feature Grid</h2>
+            <p class="responsive-text-base text-slate-400 mb-4">1 col (mobile) → 2 cols (tablet) → 3 cols (laptop+)</p>
+            <div class="feature-grid">
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition-colors">
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="responsive-text-lg font-bold text-white mb-2">Fast</h3>
+                    <p class="responsive-text-sm text-slate-400">Lightning-fast performance across all devices.</p>
+                </div>
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition-colors">
+                    <div class="w-12 h-12 bg-violet-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="responsive-text-lg font-bold text-white mb-2">Secure</h3>
+                    <p class="responsive-text-sm text-slate-400">Your data is protected with enterprise-grade security.</p>
+                </div>
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl hover:border-indigo-500/50 transition-colors">
+                    <div class="w-12 h-12 bg-fuchsia-500/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="responsive-text-lg font-bold text-white mb-2">Smart</h3>
+                    <p class="responsive-text-sm text-slate-400">AI-powered insights and recommendations.</p>
+                </div>
+            </div>
+            <div class="code-block">
+                &lt;div class="feature-grid"&gt;...&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Stats Grid -->
+        <section class="demo-section">
+            <h2 class="responsive-heading text-indigo-400 mb-6">Stats Grid</h2>
+            <p class="responsive-text-base text-slate-400 mb-4">1-2 cols (mobile) → 2 cols (tablet) → 4 cols (laptop+)</p>
+            <div class="stats-grid">
+                <div class="responsive-card bg-gradient-to-br from-indigo-500/10 to-violet-500/10 border border-indigo-500/30 rounded-xl">
+                    <div class="responsive-text-sm text-indigo-300 mb-2">Total Users</div>
+                    <div class="responsive-text-xl font-bold text-white">1,234</div>
+                </div>
+                <div class="responsive-card bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 border border-violet-500/30 rounded-xl">
+                    <div class="responsive-text-sm text-violet-300 mb-2">Dashboards</div>
+                    <div class="responsive-text-xl font-bold text-white">567</div>
+                </div>
+                <div class="responsive-card bg-gradient-to-br from-fuchsia-500/10 to-pink-500/10 border border-fuchsia-500/30 rounded-xl">
+                    <div class="responsive-text-sm text-fuchsia-300 mb-2">Files</div>
+                    <div class="responsive-text-xl font-bold text-white">890</div>
+                </div>
+                <div class="responsive-card bg-gradient-to-br from-pink-500/10 to-red-500/10 border border-pink-500/30 rounded-xl">
+                    <div class="responsive-text-sm text-pink-300 mb-2">Active Today</div>
+                    <div class="responsive-text-xl font-bold text-white">234</div>
+                </div>
+            </div>
+            <div class="code-block">
+                &lt;div class="stats-grid"&gt;...&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- Visibility Utilities -->
+        <section class="demo-section">
+            <h2 class="responsive-heading text-indigo-400 mb-6">Visibility Utilities</h2>
+            <div class="space-y-4">
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <div class="show-mobile inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2 rounded-lg font-bold">
+                        <span>📱</span> Mobile Only (< 768px)
+                    </div>
+                </div>
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <div class="hide-mobile inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-2 rounded-lg font-bold">
+                        <span>💻</span> Tablet+ Only (>= 768px)
+                    </div>
+                </div>
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <div class="show-tablet inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 text-purple-400 px-4 py-2 rounded-lg font-bold">
+                        <span>📲</span> Tablet Only (768px - 1023px)
+                    </div>
+                </div>
+                <div class="responsive-card bg-slate-900 border border-slate-800 rounded-xl">
+                    <div class="hide-tablet-down inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 text-orange-400 px-4 py-2 rounded-lg font-bold">
+                        <span>🖥️</span> Laptop+ Only (>= 1024px)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section class="demo-section">
+            <h2 class="responsive-heading text-indigo-400 mb-6">Responsive Buttons</h2>
+            <p class="responsive-text-base text-slate-400 mb-4">Full-width on mobile, auto-width on larger screens</p>
+            <div class="space-y-4">
+                <button class="responsive-button bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition-colors">
+                    Primary Button
+                </button>
+                <button class="responsive-button bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 rounded-xl transition-colors">
+                    Secondary Button
+                </button>
+            </div>
+        </section>
+
+        <!-- Data Table -->
+        <section class="demo-section">
+            <h2 class="responsive-heading text-indigo-400 mb-6">Responsive Table</h2>
+            <p class="responsive-text-base text-slate-400 mb-4">Scrollable on mobile, full-width on larger screens</p>
+            <div class="data-table-container">
+                <table class="responsive-table w-full bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <thead class="bg-slate-800">
+                        <tr>
+                            <th class="text-left text-indigo-400">Name</th>
+                            <th class="text-left text-indigo-400">Email</th>
+                            <th class="text-left text-indigo-400 hide-mobile">Role</th>
+                            <th class="text-left text-indigo-400 hide-mobile">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-slate-800">
+                            <td class="text-white">John Doe</td>
+                            <td class="text-slate-400">john@example.com</td>
+                            <td class="text-slate-400 hide-mobile">Admin</td>
+                            <td class="hide-mobile"><span class="text-green-400">Active</span></td>
+                        </tr>
+                        <tr class="border-t border-slate-800">
+                            <td class="text-white">Jane Smith</td>
+                            <td class="text-slate-400">jane@example.com</td>
+                            <td class="text-slate-400 hide-mobile">User</td>
+                            <td class="hide-mobile"><span class="text-green-400">Active</span></td>
+                        </tr>
+                        <tr class="border-t border-slate-800">
+                            <td class="text-white">Bob Johnson</td>
+                            <td class="text-slate-400">bob@example.com</td>
+                            <td class="text-slate-400 hide-mobile">User</td>
+                            <td class="hide-mobile"><span class="text-yellow-400">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Testing Instructions -->
+        <section class="responsive-card bg-gradient-to-br from-indigo-900/30 to-violet-900/30 border border-indigo-500/30 rounded-2xl">
+            <h2 class="responsive-heading text-indigo-400 mb-6">🧪 Testing Instructions</h2>
+            <div class="space-y-4 responsive-text-base text-slate-300">
+                <p><strong>Desktop Browser:</strong></p>
+                <ol class="list-decimal list-inside space-y-2 ml-4">
+                    <li>Press <code class="bg-slate-800 px-2 py-1 rounded">F12</code> to open DevTools</li>
+                    <li>Click <strong>Toggle Device Toolbar</strong> (or press <code class="bg-slate-800 px-2 py-1 rounded">Ctrl+Shift+M</code>)</li>
+                    <li>Test these viewport sizes:
+                        <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                            <li>375px - iPhone SE (Mobile Small)</li>
+                            <li>480px - Large Phone (Mobile Large)</li>
+                            <li>768px - iPad (Tablet)</li>
+                            <li>1024px - iPad Pro (Laptop)</li>
+                            <li>1440px - Desktop</li>
+                            <li>1920px - Large Desktop</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p class="mt-6"><strong>Look for:</strong></p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li>✅ Grids reorganizing (1 → 2 → 3 → 4 columns)</li>
+                    <li>✅ Text sizes scaling up as viewport grows</li>
+                    <li>✅ Buttons changing from full-width to auto-width</li>
+                    <li>✅ Visibility indicators showing/hiding</li>
+                    <li>✅ Table columns hiding on mobile</li>
+                    <li>✅ Chart containers adjusting height</li>
+                    <li>✅ Card padding increasing on larger screens</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="responsive-container py-12 border-t border-slate-800">
+        <div class="text-center">
+            <p class="responsive-text-base text-slate-500">
+                InsightAI Responsive Design System v1.0.0
+            </p>
+            <p class="responsive-text-sm text-slate-600 mt-2">
+                Created December 2025
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "name": "Copy of InsightAI Reporter",
+  "description": "An AI-powered data analysis tool that transforms CSV files into interactive dashboards using Gemini to suggest KPIs and configure charts.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
